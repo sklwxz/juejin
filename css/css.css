@@ -1,0 +1,448 @@
+/* 基础样式 */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    font-family: '微软雅黑', Courier, monospace;
+    font-size: 15px;
+    background-color: #f4f5f5;
+}
+
+ul,
+ol {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    width: 100%;
+    height: 105px;
+    background-color: white;
+}
+
+.header-top {
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid gainsboro;
+}
+
+.header-bottom {
+    width: 100%;
+    height: 45px;
+}
+
+.header-nav {
+    width: 1000px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+
+/* .header-logo {
+    float: left;
+} */
+
+.logotou {
+    position: fixed;
+    height: 60px;
+    width: 60px;
+}
+
+.header-nav-ul {
+    float: left;
+    margin-left: 40px;
+}
+
+.header-nav-ul ul li {
+    float: left;
+    width: 60px;
+    line-height: 60px;
+    height: 60px;
+    /* margin-left: 10px; */
+}
+
+.header-nav-ul ul li:nth-child(1) {
+    margin-left: 60px;
+}
+
+.header-nav-ul ul li a {
+    color: black;
+}
+
+.header-nav-ul ul li a:hover {
+    color: blue;
+    /*background-color: cornflowerblue;
+    color: white;*/
+}
+
+.header-bottom-nav {
+    margin: 0 auto;
+    width: 1000px;
+    height: 100%;
+}
+
+.header-bottom-nav-ul>ul>li {
+    width: 80px;
+    float: left;
+    font-size: 0.9rem;
+    line-height: 45px;
+    height: 45px;
+}
+
+.header-bottom-nav-ul>ul>li a {
+    color: black;
+}
+
+.header-bottom-nav-ul>ul>li a:hover {
+    color: blue;
+}
+
+.a-active {
+    color: blue !important;
+}
+
+
+/*涛哥课下新增CSS*/
+
+.header-right-ul {
+    /*确定不了总宽度，可以设置最小宽度*/
+    min-width: 500px;
+    height: 60px;
+    /* float: right; */
+}
+
+.header-right-ul li {
+    float: left;
+    height: 60px;
+    /*  通过设置行高让li的元素垂直居中 */
+    line-height: 60px;
+    /*最小宽度*/
+    min-width: 100px;
+    padding-left: 20px;
+}
+
+.header-add-button button {
+    background-color: white;
+    width: 100px;
+    height: 32px;
+    color: white;
+    font-size: 1rem;
+    border: 1px solid #1e80ff;
+    background-color: #1e80ff;
+}
+
+.hot {
+    width: 22px;
+    height: 32px;
+    line-height: 32px;
+    margin-left: -10px;
+    border-left-color: whitesmoke;
+    background-color: #1e80ff;
+}
+
+.header-login-button button {
+    background-color: white;
+    width: 80px;
+    height: 32px;
+    color: #1e80ff;
+    font-size: 1rem;
+    border: 1px solid #1e80ff;
+    margin-left: 20px;
+}
+
+.header-author-center a {
+    color: #1e80ff;
+    background-color: #e8f3ff;
+    width: 100px;
+    height: 32px;
+    /*把a标签转换成 内联块状  否则无法设置高度和宽度*/
+    display: inline-block;
+    /*设置下行高 让a 居中*/
+    line-height: 32px;
+    /*文本水平居中*/
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.header-search-input {
+    width: 150px;
+    height: 32px;
+    display: inline-block;
+    line-height: 32px;
+}
+
+.header-search-input input {
+    width: 150px;
+    height: 32px;
+    /*选中边框加粗效果去掉*/
+    outline: none;
+    border: none;
+    background-color: ghostwhite;
+    /* padding-left: 10px; */
+    /*  圆角 */
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.header-search-icon {
+    background-color: ghostwhite;
+    /*转换为行内块状*/
+    display: inline-block;
+    height: 32px;
+    width: 20px;
+    line-height: 32px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-left: -5px;
+    cursor: pointer;
+}
+
+
+/* .container-top{
+    width: 500px;
+    height: 50px;
+    margin: 0 auto;
+    background-color: wheat;
+    border-bottom: 1px solid rgb(220, 220, 220);
+    position: fixed;
+} */
+
+.container-left {
+    width: 500px;
+    height: auto;
+    /* margin: 0 auto; */
+    margin-left: 260px;
+    /* background-color: thistle; */
+    position: absolute;
+    background-color: white;
+    margin-top: 20px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.container-left-top {
+    width: 500px;
+    height: 40px;
+    list-style-type: none;
+    border-bottom: 1px solid gainsboro;
+}
+
+.container-left-top ul li {
+    line-height: 40px;
+}
+
+.container-left-top ul li a:hover {
+    color: blue;
+}
+
+.container-left li a {
+    padding-left: 20px;
+}
+
+.container-left-middle span {
+    margin-top: 1px;
+    margin-bottom: 10px;
+}
+
+.container-left-middle ul li {
+    /* margin-left: 20px; */
+    margin-top: 10px;
+    font-size: 12.5px;
+    float: left;
+}
+
+.container-left-middle ul {
+    padding-bottom: 10px;
+}
+
+.shu {
+    margin-left: 5px;
+}
+
+.img1 {
+    float: right;
+    width: 100px;
+    height: 80px;
+    margin-top: -79px;
+}
+
+h3 {
+    font-size: 16px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+
+.span {
+    padding-bottom: 10px;
+    border-bottom: 1px solid gainsboro;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container-right {
+    width: 250px;
+    height: 800px;
+    margin-left: -100px;
+    float: left;
+    /* background-color: violet; */
+}
+
+.container-right-1 ul li {
+    float: left;
+}
+
+.container-right-1 {
+    background-color: white;
+    margin-top: 20px;
+}
+
+.container-right-1 img {
+    width: 50px;
+    height: 50px;
+}
+
+.qiandao {
+    padding-top: 11px;
+    padding-left: 29px;
+}
+
+.quiandao {
+    border-radius: 20px;
+    width: 70px;
+    height: 35px;
+    border-color: #15c3e2;
+    color: #15c3e2;
+    cursor: pointer;
+    background-color: white;
+}
+
+.nihao {
+    padding-top: 15px;
+    padding-left: 8px;
+    font-size: 20px;
+}
+
+.continue {
+    clear: both;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+p {
+    font-weight: bold
+}
+
+.container-right-2 {
+    margin-top: 20px;
+    background-color: white;
+}
+
+input {
+    width: 100px;
+    height: 29px;
+    /* background-color: yellow;
+    border-style: none; */
+    padding-left: -10px;
+}
+
+.phone {
+    border: 1px solid gainsboro;
+    width: 220px;
+}
+
+select,
+input {
+    border-style: none;
+    outline: none;
+}
+
+.yanzhengma input {
+    width: 120px;
+    margin-left: 5px;
+}
+
+.yanzhengma {
+    margin-top: 10px;
+    border: 1px solid gainsboro;
+    margin-bottom: 10px;
+    width: 220px;
+}
+
+select {
+    width: 50px;
+    height: 31px;
+    /* border-style: none;
+    background-color: yellow; */
+}
+
+.login button {
+    width: 200px;
+    height: 30px;
+    background-color: #1e80ff;
+    color: white;
+}
+
+.register {
+    margin-top: 20px;
+}
+
+.container-right-3 {
+    width: 250px;
+    height: 80px;
+    margin-top: 20px;
+    background-color: white;
+}
+
+.erweima {
+    padding-left: 15px;
+    padding-top: 15px;
+}
+
+.grow {
+    margin-left: -15px;
+    margin-top: 18px;
+}
+
+.grow-up {
+    font-size: 10px;
+}
+
+.container-right-4,
+.container-right-5 {
+    width: 250px;
+    height: 260px;
+}
+
+.container-right-4-img {
+    padding-top: 25px;
+    width: 250px;
+    height: 260px;
+}
+
+.container-right-5 {
+    width: 250px;
+    height: 260px;
+    padding-top: 25px;
+}
+
+.container-right-5-img {
+    padding-top: 25px;
+    width: 250px;
+    height: 260px;
+}
+
+.erweima {
+    width: 50px;
+    height: 50px;
+}
