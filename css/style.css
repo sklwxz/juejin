@@ -139,16 +139,17 @@ div {
     align-content: center;
 }
 
-.active {
-    padding: 0;
-    height: 5rem;
-    color: #1e80ff;
-    position: relative;
-}
-
 .nav-item {
     position: relative;
     cursor: pointer;
+    padding: 0;
+    height: 5rem;
+    color: #1e80ff;
+}
+
+.nav-item-active>a {
+    color: #1e80ff;
+    margin-top: -10px;
 }
 
 .right-side-nav {
@@ -316,6 +317,15 @@ button {
     margin-top: 50px;
 }
 
+.content-lefts {
+    width: 710px;
+    height: 45px;
+    background-color: #ffffff;
+    margin-right: 25px;
+    float: left;
+    margin-top: 10px;
+}
+
 .top {
     height: 45px;
     padding: 0;
@@ -348,6 +358,15 @@ button {
 
 .box-a text {
     height: 18px;
+}
+
+.box-active>a {
+    color: #1e80ff;
+    margin-top: -10px;
+}
+
+.a {
+    color: #1e80ff;
 }
 
 .box-a span {
@@ -458,6 +477,154 @@ i span {
 
 i span:hover {
     color: #1e80ff;
+}
+
+.content-rights {
+    width: 300px;
+    height: 96px;
+    background-color: #ffffff;
+    float: left;
+    position: relative;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+.content-rights-top {
+    height: 80px;
+}
+
+.content-rights-top .calendar {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 22px;
+    top: 15px;
+}
+
+.content-rights-top span {
+    position: absolute;
+    left: 60px;
+    top: 15px;
+    font-size: 18px;
+    color: #1d2d29;
+}
+
+.content-rights-top button {
+    width: 72px;
+    height: 32px;
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    border: #1e80ff 1px solid;
+    border-radius: 50px;
+    background-color: white;
+}
+
+.content-rights-top button a {
+    font-size: 14px;
+    color: #1e80ff;
+    white-space: nowrap;
+    position: absolute;
+    top: -25px;
+    right: 15px;
+}
+
+.content-rights-top button:hover {
+    background-color: #e8f3ff;
+}
+
+.content-rights-bottom {
+    padding-top: 20px;
+}
+
+.content-rights-bottom p {
+    position: absolute;
+    bottom: 15px;
+    left: 50px;
+    font-size: 14px;
+    color: #4e5969;
+}
+
+.content-rights-bottom img {
+    width: 300px;
+    height: 300px;
+    padding-top: 20px;
+}
+
+.content-rights-bottom div {
+    width: 300px;
+    background-color: #ffffff;
+    margin-top: 20px;
+    position: relative;
+}
+
+.content-rights-bottom div img {
+    width: 36px;
+    height: 36px;
+}
+
+.content-rights-bottom div span {
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 23px;
+    font-size: 14px;
+}
+
+.content-rights-bottom div a {
+    margin-left: 20px;
+    margin-top: 1px;
+    line-height: 2rem;
+}
+
+.content-rights-bottom div:last-child {
+    background-color: rgb(244, 245, 245);
+}
+
+.content-rights-bottom div:last-child a {
+    margin-left: 0px;
+    font-size: 12px;
+    color: #909090;
+}
+
+.content-rights-bottom div:last-child a:hover {
+    color: #1e80ff;
+}
+
+.content-rights-footer {
+    position: relative;
+}
+
+.content-rights-footer ul {
+    height: 20px;
+}
+
+.content-rights-footer ul li {
+    width: 40px;
+    height: 30px;
+}
+
+.content-rights-footer ul a {
+    line-height: 20px;
+}
+
+.content-rights-footer a img {
+    position: absolute;
+    left: 15px;
+    top: 150px;
+}
+
+.content-rights-footer .qrcode {
+    margin-top: 50px;
+    position: relative;
+}
+
+.content-rights-footer .qrcode img {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    top: -17px;
+    left: -23px;
+    display: none;
 }
 
 .content-right {
@@ -650,4 +817,100 @@ i span:hover {
     position: absolute;
     top: 0;
     right: 0;
+}
+
+.button-a {
+    color: #a9acb1;
+    background-color: #fff;
+}
+
+.content-bottom {
+    width: 710px;
+    height: 3000px;
+    background-color: #ffffff;
+    margin-right: 25px;
+    float: left;
+}
+
+.article-titles {
+    margin: 0 0 1.667rem;
+    font-weight: 600;
+    line-height: 1.31;
+    color: #252933;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+.catalog-titl {
+    font-weight: 500;
+    padding: 0.4rem 0;
+    font-size: 16px;
+    line-height: 2rem;
+    color: #1d2129;
+    text-align: left;
+    border-bottom: 1px solid #e4e6eb;
+}
+
+.article-catalog {
+    background: #fff;
+    border-radius: 4px;
+    padding: 0;
+    height: 100%;
+}
+
+.catalog-lis {
+    position: relative;
+    line-height: 22px;
+    padding: 0 0 12px;
+    height: 300px;
+}
+
+.catalog-lis .ite.dl {
+    font-weight: 400;
+    color: #000;
+    width: 300px;
+}
+
+.catalog-lis.ite {
+    margin: 0;
+    padding: 0;
+    font-size: 1.167rem;
+    font-weight: 400;
+    line-height: 22px;
+    color: #333;
+    list-style: none;
+}
+
+.catalog-lis.catalog-aTag {
+    color: inherit;
+    display: inline-block;
+    padding: 8px;
+    width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.catalog-lis .ite.d1:first-child>.a-containe {
+    margin-top: 0;
+}
+
+.catalog-lis .ite.active>.a-containe {
+    color: #007fff;
+}
+
+.catalog-lis .ite .a-containe {
+    display: block;
+    position: relative;
+    padding: 0 0 0 12px;
+    white-space: nowrap;
+    background-color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #000;
+}
+
+.catalog-lis .ite.d1>.a-containe {
+    margin: 0;
+    padding: 0 0 0 11px;
 }

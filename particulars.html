@@ -8,8 +8,10 @@
     <title>掘金网</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/header.js" type="text/javascript"></script>
-    <!-- 导入字体图标样式 -->
-    <link rel="stylesheet" href="css/font/iconfont.css">
+    <script type="text/javascript" src="js/vue.js"></script>
+</head>
+<!-- 导入字体图标样式 -->
+<link rel="stylesheet" href="css/font/iconfont.css">
 </head>
 
 <body>
@@ -23,21 +25,21 @@
                         <nav class="main-nav">
                             <ul class="nav-list">
                                 <ul class="phone-hide">
-                                    <li class="nav-item link-item active">
+                                    <li class="nav-item-active">
                                         <a href="index.html">首页</a></li>
-                                    <li class="nav-item link-item active">
+                                    <li class="nav-item">
                                         <a href="index.html">沸点</a></li>
-                                    <li class="nav-item link-item active">
+                                    <li class="nav-item">
                                         <a href="index.html">课程</a></li>
-                                    <li class="nav-item link-item active">
+                                    <li class="nav-item">
                                         <a href="index.html">直播</a></li>
-                                    <li class="nav-item link-item active">
+                                    <li class="nav-item">
                                         <a href="index.html">活动</a></li>
-                                    <li class="nav-item link-item active">
+                                    <li class="nav-item">
                                         <a href="index.html">商城</a></li>
-                                    <li class="nav-item link-item active">
+                                    <li class="nav-item">
                                         <a href="index.html">APP</a></li>
-                                    <li class="nav-item link-item active">
+                                    <li class="nav-item">
                                         <a href="index.html">插件</a></li>
                                     <ul class="right-side-nav">
                                         <li class="search-add">
@@ -75,150 +77,436 @@
         </div>
         <!--内容部分-->
         <div class="content wrapper">
-            <nav class="view-nav">
-                <div class="nav-list left">
-                    <a href="" class="nav-item">
-                        <div>综合
+            <div class="content-lefts">
+                <div class="content-bottom">
+                    <h1 class="article-titles">日新刷题-496.下一个更大元素</h1>
+                    <div class="markdown-body">
+                        <style>
+                            .markdown-body {
+                                word-break: break-word;
+                                line-height: 1.7;
+                                font-weight: 400;
+                                font-size: 16px;
+                                margin-left: 30px;
+                                overflow-x: hidden;
+                                color: #2c3e50;
+                                font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+                                -webkit-font-smoothing: antialiased;
+                                -moz-osx-font-smoothing: grayscale
+                            }
+                            
+                            .markdown-body h1,
+                            .markdown-body h2,
+                            .markdown-body h3,
+                            .markdown-body h4,
+                            .markdown-body h5,
+                            .markdown-body h6 {
+                                line-height: 1.5;
+                                font-weight: 600;
+                                margin-top: 35px;
+                                margin-bottom: 8px;
+                                padding-bottom: 5px
+                            }
+                            
+                            .markdown-body h1 :before,
+                            .markdown-body h2 :before,
+                            .markdown-body h3 :before,
+                            .markdown-body h4 :before,
+                            .markdown-body h5 :before,
+                            .markdown-body h6 :before {
+                                content: "#";
+                                display: inline-block;
+                                color: #3eaf7c;
+                                padding-right: .23em
+                            }
+                            
+                            .markdown-body h1 {
+                                font-size: 30px;
+                                margin-bottom: 5px
+                            }
+                            
+                            .markdown-body h2 {
+                                padding-bottom: 8px;
+                                margin-top: 50px;
+                                font-size: 24px;
+                                border-bottom: 1px solid #eaecef
+                            }
+                            
+                            .markdown-body h3 {
+                                font-size: 18px;
+                                padding-bottom: 0
+                            }
+                            
+                            .markdown-body h4 {
+                                font-size: 16px
+                            }
+                            
+                            .markdown-body h5 {
+                                font-size: 15px
+                            }
+                            
+                            .markdown-body h6 {
+                                margin-top: 5px
+                            }
+                            
+                            .markdown-body p {
+                                line-height: inherit;
+                                margin-top: 22px;
+                                margin-bottom: 22px
+                            }
+                            
+                            .markdown-body img {
+                                max-width: 100%
+                            }
+                            
+                            .markdown-body hr {
+                                border: none;
+                                border-top: 1px solid #eaecef;
+                                margin-top: 32px;
+                                margin-bottom: 32px
+                            }
+                            
+                            .markdown-body code {
+                                word-break: break-word;
+                                overflow-x: auto;
+                                font-weight: 400;
+                                background-color: rgba(27, 31, 35, .05);
+                                color: #476582;
+                                margin: 0;
+                                font-size: .85em;
+                                border-radius: 3px;
+                                font-size: .87em;
+                                padding: .165em .5em;
+                            }
+                            
+                            .markdown-body code,
+                            .markdown-body pre {
+                                font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace
+                            }
+                            
+                            .markdown-body pre {
+                                overflow: auto;
+                                position: relative;
+                                line-height: 1.6;
+                                padding: 20px 24px;
+                                background-color: #282c34;
+                                border-radius: 6px
+                            }
+                            
+                            .markdown-body pre>code {
+                                font-size: 14px;
+                                padding: 0;
+                                margin: 0;
+                                word-break: normal;
+                                display: block;
+                                overflow-x: auto;
+                                color: #fff
+                            }
+                            
+                            .markdown-body a {
+                                text-decoration: none;
+                                color: #3eaf7c;
+                                font-weight: 500
+                            }
+                            
+                            .markdown-body a:active,
+                            .markdown-body a:hover {
+                                color: #42b983;
+                                border-bottom: 1px solid #42b983
+                            }
+                            
+                            .markdown-body table {
+                                display: inline-block!important;
+                                font-size: 14px;
+                                width: auto;
+                                max-width: 100%;
+                                overflow: auto;
+                                margin: 16px 0;
+                                border-collapse: collapse
+                            }
+                            
+                            .markdown-body thead {
+                                background: #f6f6f6;
+                                background: #3eaf7c;
+                                color: #000;
+                                color: #fff;
+                                text-align: left
+                            }
+                            
+                            .markdown-body tr:nth-child(2n) {
+                                background-color: #f6f8fa
+                            }
+                            
+                            .markdown-body td,
+                            .markdown-body th {
+                                border: 1px solid #dfe2e5;
+                                padding: 10px 16px;
+                                line-height: 24px
+                            }
+                            
+                            .markdown-body td {
+                                min-width: 120px
+                            }
+                            
+                            .markdown-body blockquote {
+                                font-size: 14px;
+                                padding: 6px 23px;
+                                margin: 22px 0;
+                                border-left: 6px solid #42b983;
+                                background-color: #f3f5f7;
+                                font-weight: 400
+                            }
+                            
+                            .markdown-body blockquote:after {
+                                display: block;
+                                content: ""
+                            }
+                            
+                            .markdown-body blockquote>p {
+                                margin: 10px 0
+                            }
+                            
+                            .markdown-body ol,
+                            .markdown-body p,
+                            .markdown-body ul {
+                                line-height: 1.7
+                            }
+                            
+                            .markdown-body ol,
+                            .markdown-body ul {
+                                padding-left: 28px
+                            }
+                            
+                            .markdown-body ol li,
+                            .markdown-body ul li {
+                                margin-bottom: 0;
+                                list-style: inherit
+                            }
+                            
+                            .markdown-body ol li .task-list-item,
+                            .markdown-body ul li .task-list-item {
+                                list-style: none
+                            }
+                            
+                            .markdown-body ol li .task-list-item ol,
+                            .markdown-body ol li .task-list-item ul,
+                            .markdown-body ul li .task-list-item ol,
+                            .markdown-body ul li .task-list-item ul {
+                                margin-top: 0
+                            }
+                            
+                            .markdown-body ol ol,
+                            .markdown-body ol ul,
+                            .markdown-body ul ol,
+                            .markdown-body ul ul {
+                                margin-top: 3px
+                            }
+                            
+                            .markdown-body ol li {
+                                padding-left: 6px
+                            }
+                            
+                            .markdown-body .contains-task-list {
+                                padding-left: 0
+                            }
+                            
+                            .markdown-body .task-list-item {
+                                list-style: none
+                            }
+                            
+                            @media (max-width:720px) {
+                                .markdown-body h1 {
+                                    font-size: 24px
+                                }
+                                .markdown-body h2 {
+                                    font-size: 20px
+                                }
+                                .markdown-body h3 {
+                                    font-size: 18px
+                                }
+                            }
+                            
+                            .cod-span {
+                                margin-left: -220px;
+                                margin-top: -120px;
+                            }
+                            
+                            .cod {
+                                margin-top: -120px;
+                            }
+                        </style>
+                        <p>携手创作，共同成长，这是我参与【掘金日新计划-8月更文挑战的第17天】</p>
+                        <a href="">点击这里查看详情</a>
+                        <h1 id="h1">一、题目描述</h1>
+                        <a href="">496.下一个更大元素1-力扣(leetCode)(leetcode-cn.com)</a>
+                        <p>nums1中数字x的下一个更大元素时指xnums2中对应位置右侧的第一个比x下达的元素。</p>
+                        <p>给你两个没有重复元素的数组nums1和num2，下标从0开始计数，其中nums1是nums2的子集</p>
+                        <p>对于每个 0
+                            <=i < nums1.length ，找出满足 nums1[i]==n ums2[j] 的下标 j ，并且在 nums2 确定 nums2[j] 的 下一个更大元素 。如果不存在下一个更大元素，那么本次查询的答案是 -1 。</p>
+                                <p>返回一个长度为 nums1.length 的数组 ans 作为答案，满足 ans[i] 是如上所述的 下一个更大元素 。</p>
+                                <p>示例 1</p>
+                                <pre>
+                               
+                                <code class=" cod">
+                                <span class="cod-span">输入：nums1 = [4,1,2],= [1,3,4,2]. </span>
+                                <span class="cod-span">输出：[-1,3,-1] </span> 
+                                <span class="cod-span">解释：nums1 中每个值的下一个更大元素如下所述：</span>
+                                <span class="cod-span">-4 ，用加粗斜体标识，nums2 = [1,3,4,2]。</span>
+                                <span class="cod-span">不存在下一个更大元素，所以答案是 -1 。</span> 
+                                <span class="cod-span">-1 ，用加粗斜体标识，nums2 = [1,3,4,2]。</span>
+                                <span class="cod-span">下一个更大元素是 3 。</span>
+                                <span class="cod-span">-2 ，用加粗斜体标识，nums2 = [1,3,4,2]。</span>
+                                <span class="cod-span">不存在下一个更大元素，所以答案是-1 。</span>
+                                </code>
+                                </pre>
+                                <p>示例 2</p>
+                                <pre>
+                                <code >
+                                <span class="cod-span">输入：nums1 = [2,4], nums2 = [1,2,3,4]. </span>
+                                <span class="cod-span">输出：[3,-1] </span> 
+                                <span class="cod-span">解释：nums1 中每个值的下一个更大元素如下所述：</span> 
+                                <span class="cod-span">-2 ，用加粗斜体标识，nums2 = [1,2,3,4]。下一个更大元素是 3 。</span> 
+                                <span class="cod-span">-4 ，用加粗斜体标识，nums2 = [1,2,3,4]。不存在下一个更大元素，所以答案是 -1 。</span> 
 
-                        </div>
-                    </a>
-                    <a href="" class="nav-item">
-                        <div>关注
+                                </code></pre>
+                                <p>提示：</p>
+                                <p>1
+                                    <=n ums1.length <=n ums2.length <=1 000 </p>
+                                        <p>0
+                                            <=n ums1[i], nums2[i] <=1 0^4 </p <p>nums1和nums2中所有整数 互不相同 </p>
+                                        <p>nums1 中的所有整数同样出现在 nums2 中</p>
 
-                        </div>
-                    </a>
-                    <a href="" class="nav-item">
-                        <div>后端
+                                        <p>进阶： 你可以设计一个时间复杂度为 O(nums1.length + nums2.length) 的解决方案吗？</p>
+                                        <h1 id="h2">二、思路分析</h1>
+                                        <p>定义一个栈 1、遍历nums2, 如果栈不为空并且栈顶元素小于当前元素, 存入map, key = 栈顶元素，value = 当前元素;</p>
+                                        <p>2、一直检查栈顶直到，栈顶元素大于等于当前元素。</p>
+                                        <p>3、当前元素压栈。</p>
+                                        <p>4、遍历nums1, 在map中取对应的值，不存在记-1 </p>
+                                        <p>5、返回结果</p>
 
-                        </div>
-                    </a>
-                    <a href="" class="nav-item">
-                        <div>前端
-
-                        </div>
-                    </a>
-                    <a href="" class="nav-item">
-                        <div>Android
-
-                        </div>
-                    </a>
-                    <a href="" class="nav-item">
-                        <div>IOS
-
-                        </div>
-                    </a>
-                    <a href="" class="nav-item">
-                        <div>人工智能
-
-                        </div>
-                    </a>
-                    <a href="" class="nav-item">
-                        <div>开发工具
-
-                        </div>
-                    </a>
-                    <a href="" class="nav-item">
-                        <div>代码人生
-
-                        </div>
-                    </a>
-                    <a href="" class="nav-item">
-                        <div>阅读
-
-                        </div>
-                    </a>
-                    <a href="" class="nav-item right">
-                       标签管理
-
-                       
-                    </a>
+                                        <h1 id="h3">三、AC代码</h1>
+                                        <pre>
+                                            <code>
+                                        <span class="cod-span">class Solution { </span>
+                                        <span class="cod-span">    /** </span>
+                                        <span class="cod-span">   * @param Integer[] $nums1</span> 
+                                        <span class="cod-span">    * @param Integer[] $nums2</span> 
+                                        <span class="cod-span">   * @return Integer[]</span> 
+                                        <span class="cod-span">    */ </span>
+                                        <span class="cod-span">    function nextGreaterElement($nums1, $nums2) {</span>
+                                        <span class="cod-span">         $stack = []; </span>
+                                        <span class="cod-span">         for ($i = 0; $i< count($nums2); $i++) { 
+                                        <span class="cod-span">            while (!empty($stack) && end($stack) < $nums2[$i]) { </span>
+                                        <span class="cod-span">                   $map[array_pop($stack)]=$ nums2[$i]; </span>
+                                        <span class="cod-span">                } </span>
+                                        <span class="cod-span">               array_push($stack, $nums2[$i]);</span> 
+                                        <span class="cod-span">           }</span>
+                                        <span class="cod-span">           $res=[ ]; </span>
+                                        <span class="cod-span">           for ($j=0 ; $j < count($nums1); $j++) { </span>
+                                        <span class="cod-span">                if (isset($map[$nums1[$j]])) {</span> 
+                                        <span class="cod-span">                    $res[]=$ map[$nums1[$j]];</span>
+                                        <span class="cod-span">        } else { </span>
+                                        <span class="cod-span">            $res[]=- 1;</span> 
+                                        <span class="cod-span">         } </span> 
+                                        <span class="cod-span">       } </span>
+                                        <span class="cod-span">       return $res;</span> 
+                                        <span class="cod-span">    } </span>
+                                        <span class="cod-span"> }</span> </p>
+                    </code></pre></div>
                 </div>
-            </nav>
-            <div class="content-left">
-                <header class="top">
-                    <nav class="tops">
-                        <ul class="top-ul">
-                            <li class="box">
-                                <a href="index.html" class="box-a">
-                                    推荐
-                                   <span>|</span>
-                                   </a>
-                            </li>
-                            <li class="box"><a href="index.html" class="box-a">最新<span>|</span></a></li>
-                            <li class="box"><a href="index.html" class="box-a">热榜</a></li>
-                        </ul>
-                    </nav>
-                </header>
-                <div class="bottom">
-                    <li class="articl">
-                        <div class="article">
-                            <p class="title1 distance"><a href="particulars.html">windy青烟书双</a></p>
-                            <p class="title2 distance" title="JS中的——跨域CORS">
-                                <a href="particulars.html">JS中的——跨域CORS</a>
-                            </p>
-                            <p class="article-content distance">js跨域是指通过js在不同的域之间进行数据传输或通信，比如用ajax向一个不同的域请求数据，或者通过js获取页面中不同域的框架中(iframe)的数据。只要协议、域名、端口有任何一个不同，都被当作是不同的域。</p>
-                            <i class="iconfont distance1"><a href="particulars.html">&#xe8bf;<span>371</span></a></i>
-                            <i class="iconfont distance1"><a href="particularsx.html">&#xf01b8;<span>2</span></a></i>
-                            <i class="iconfont distance1"><a href="particulars.html">&#xe662;<span>评论</span></a></i>
-                        </div>
+                <div style=" width: 710px; " id="body">
+                    <li style="width: 710px; background-color: #fff;margin-left: 0px;margin-top: 100px;">
+                        <h3>相关推荐</h3>
                     </li>
                 </div>
-            </div>
-            <div class="content-right">
-                <div class="content-right-top">
-                    <img class="calendar" src="img/234日历-线性-细.png" />
-                    <span>上午好!</span>
-                    <button><a>去签到</a></button>
-                </div>
-                <div class="content-right-bottom">
-                    <p>点亮你在社区的每一天</p>
-                    <img src="img/pic1.webp" />
-                    <img src="img/pic2.webp" />
-                    <div>
-                        <a href="index.html"><img src="img/3.png"><span>稀土掘金漫游指南</span></a>
-                        <a href="index.html"><img src="img/4.png"><span>安装掘金浏览器插件</span></a>
-                        <a href="index.html"><img src="img/5.png"><span>前往掘金翻译计划</span></a>
-                    </div>
-                    <div class="content-right-footer">
-                        <ul>
-                            <li><a href="index.html">用户协议</a></li>
-                            <li><a href="index.html">营业执照</a></li>
-                            <li><a href="index.html">隐私政策</a></li>
-                            <li><a href="index.html">关于我们</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="index.html">站点地图</a></li>
-                            <li><a href="index.html">使用指南</a></li>
-                            <li><a href="index.html">友情链接</a></li>
-                            <li><a href="index.html">更多文章</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="index.html">京公网安备11010802026719号</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="index.html">版权所有：北京北比信息技术有限公司</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="index.html">公司地址：北京市海淀区信息路甲28号13层B座13B-5</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="index.html">公司座机：010-83434395</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="index.html">举报邮箱： feedback@xitu.io</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="index.html">©2022 稀土掘金</a></li>
-                        </ul>
-                        <a href="index.html"><img src="img/7.png"></a>
-                        <div class="qrcode">
-                            <img src="img/8.jpeg">
-                        </div>
-                    </div>
 
-                </div>
+
             </div>
         </div>
+        <div class="content-rights">
+            <div class="content-rights-top">
+                <img class="calendar" src="img/234日历-线性-细.png" />
+                <span>上午好!</span>
+                <button><a>去签到</a></button>
+            </div>
+            <div class="content-rights-bottom">
+                <p>点亮你在社区的每一天</p>
+                <img src="img/pic1.webp" />
+                <img src="img/pic2.webp" />
+                <div>
+                    <a href="index.html"><img src="img/3.png"><span>稀土掘金漫游指南</span></a>
+                    <a href="index.html"><img src="img/4.png"><span>安装掘金浏览器插件</span></a>
+                    <a href="index.html"><img src="img/5.png"><span>前往掘金翻译计划</span></a>
+                </div>
+                <div>
+                    <nav class="article-catalog">
+                        <div class="catalog-titl">
+                            <div style="width: 40px; height:40px;background-color: #fff; margin-left: 20px;margin-top: 20px;">
+                                <h3>目录</h3>
+                            </div>
+                        </div>
+                        <div style="height:200px;background-color: #fff;">
+                            <ul class=" catalog-lis">
+                                <li class="ite dl">
+                                    <div class=" a-containe">
+                                        <a href="#h1" class="catalog-aTag">一、题目描述</a>
+                                    </div>
+                                </li>
+                                <li class="ite dl">
+                                    <div class=" a-containe">
+                                        <a href="#h2" class="catalog-aTag">二、思路分析</a>
+                                    </div>
+                                </li>
+                                <li class="ite dl">
+                                    <div class=" a-containe">
+                                        <a href="#h3" class="catalog-aTag">三、AC代码</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+
+                </div>
+                <div class="content-rights-footer">
+                    <ul>
+                        <li><a href="index.html">用户协议</a></li>
+                        <li><a href="index.html">营业执照</a></li>
+                        <li><a href="index.html">隐私政策</a></li>
+                        <li><a href="index.html">关于我们</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="index.html">站点地图</a></li>
+                        <li><a href="index.html">使用指南</a></li>
+                        <li><a href="index.html">友情链接</a></li>
+                        <li><a href="index.html">更多文章</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="index.html">京公网安备11010802026719号</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="index.html">版权所有：北京北比信息技术有限公司</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="index.html">公司地址：北京市海淀区信息路甲28号13层B座13B-5</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="index.html">公司座机：010-83434395</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="index.html">举报邮箱： feedback@xitu.io</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="index.html">©2022 稀土掘金</a></li>
+                    </ul>
+                    <a href="index.html"><img src="img/7.png"></a>
+                    <div class="qrcode">
+                        <img src="img/8.jpeg">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
     </div>
 </body>
 
