@@ -13,13 +13,14 @@ window.addEventListener("scroll", function(event) {
 
 
     })
-    //回到顶部
-document.addEventListener('scroll', function(event) {
-    triangle.hidden = (pageYOffset <= document.documentElement.clientHeight)
-})
-triangle.onclick = function() {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+    /* 滚动后导航栏显示当前所在区域 */
+$(window).scroll(function() { //监听窗口滚动事件
+    var scrollTop = $("html").scrollTop(); //获取当前位置到页面顶部的距离
+    $(".catalog-lis").each(function(index, element) { //遍历导航栏选项
+        if ($(element.hash).offset() && scrollTop >= $(element.hash).offset().top - 300) { //判断当前位置是否为导航栏对应区域
+            $(this).css({ "background": "#D23217", "color": "white", "border": "1px solid #000000", "box-shadow": "inset 0 0 1px #db5f4c,inset 0 1px 1px #f18a75" }); //将导航栏选项设置样式
+            $(this).siblings().css({ "background": "white", "color": "black", "border": "0 solid #000000", "box-shadow": "" });
+            //将其他导航选项取消样式
+        };
     });
-}
+});
